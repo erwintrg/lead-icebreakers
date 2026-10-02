@@ -1,0 +1,13 @@
+first_name,last_name,title,company_name,company_domain,industry,city,country,email,phone,linkedin_url
+Michael,Example,Head of Growth,Brightpath Analytics Ltd,brightpath-analytics.example,Computer Software,London,United Kingdom,michael@brightpath-analytics.example,+44 20 0000 0001,https://linkedin.example/in/michael-example
+Jane,Example,Founder,Example Consulting,example-consulting.example,Management Consulting,Leeds,United Kingdom,jane@example-consulting.example,+44 113 000 0002,https://linkedin.example/in/jane-example
+MAXIMILIAN,Mustermann,Geschäftsführer,Hafenblick Digital GmbH & Co. KG,hafenblick.example,Marketing & Advertising,Hamburg,Germany,max@hafenblick.example,+49 40 0000003,https://linkedin.example/in/maximilian-mustermann
+Lukas,Beispiel,Inhaber,Online Marketing,onlinemarketing-wien.example,Marketing & Advertising,Wien,Austria,lukas@onlinemarketing-wien.example,+43 1 0000004,https://linkedin.example/in/lukas-beispiel
+José,Placeholder,Managing Director,Northwind IT Services S.L.,northwind-it.example,Information Technology & Services,Madrid,Spain,jose@northwind-it.example,+34 91 000 0005,https://linkedin.example/in/jose-placeholder
+Sophie,Sample,Partner,The Framework,theframework.example,Design,Dublin,Ireland,sophie@theframework.example,+353 1 000 0006,https://linkedin.example/in/sophie-sample
+Ursula,Muster,Inhaberin,Grünwerk Studio AG,gruenwerk-studio.example,Design,Zürich,Switzerland,ursula@gruenwerk-studio.example,+41 44 000 00 07,https://linkedin.example/in/ursula-muster
+Camille,Exemple,Directrice,Lumen Conseil SA,lumen-conseil.example,Management Consulting,Fribourg,Switzerland,camille@lumen-conseil.example,+41 26 000 00 08,https://linkedin.example/in/camille-exemple
+Olivia,Demo,COO,Emma Solutions Ltd,emma-solutions.example,Computer Software,Manchester,United Kingdom,olivia@emma-solutions.example,+44 161 000 0009,https://linkedin.example/in/olivia-demo
+Daniel,Test,Head of Sales,IT Services & Consulting,it-services-consulting.example,Information Technology & Services,München,Deutschland,daniel@it-services-consulting.example,+49 89 0000010,https://linkedin.example/in/daniel-test
+Christopher,Placeholder,Founder,CLOUDRIDGE AG,cloudridge.example,Cloud Computing,Bern,CH,chris@cloudridge.example,+41 31 000 00 11,https://linkedin.example/in/christopher-placeholder
+Anna,Example,Marketing Lead,Tradeloop Commerce Solutions BV,tradeloop.example,E-commerce,Amsterdam,Netherlands,anna@tradeloop.example,+31 20 000 0012,https://linkedin.example/in/anna-example

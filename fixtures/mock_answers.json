@@ -1,0 +1,23 @@
+{
+  "_about": "Canned model answers for fixtures/sample_leads.csv, keyed by company_domain. They were written by hand to look like what the two model passes return. Four writer answers contain deliberate mistakes so the demo shows what the second reader is for. Rows that are not listed here get a crude rule-based guess (lead_icebreakers/backends/mock.py).",
+  "writer": {
+    "brightpath-analytics.example": {"nick": "Mike", "company": "Brightpath", "kind": "brand", "lang": "en"},
+    "example-consulting.example": {"nick": "Jane", "company": "Example Consulting", "kind": "brand", "lang": "en"},
+    "hafenblick.example": {"nick": "Max", "company": "Hafenblick", "kind": "brand", "lang": "de"},
+    "onlinemarketing-wien.example": {"nick": "Lukas", "company": "dein Online-Marketing-Business", "kind": "generic", "lang": "de"},
+    "northwind-it.example": {"nick": "Jose", "company": "Northwind", "kind": "brand", "lang": "en"},
+    "theframework.example": {"nick": "Sophie", "company": "your design business", "kind": "generic", "lang": "en"},
+    "gruenwerk-studio.example": {"nick": "Ursula", "company": "Grünwerk Studio", "kind": "brand", "lang": "de"},
+    "lumen-conseil.example": {"nick": "Camille", "company": "Lumen", "kind": "brand", "lang": "en"},
+    "emma-solutions.example": {"nick": "Olivia", "company": "Emma", "kind": "brand", "lang": "en"},
+    "it-services-consulting.example": {"nick": "Daniel", "company": "deine IT-Beratung", "kind": "generic", "lang": "de"},
+    "cloudridge.example": {"nick": "Chris", "company": "Cloudridge", "kind": "brand", "lang": "de"},
+    "tradeloop.example": {"nick": "Anna", "company": "Tradeloop Commerce", "kind": "brand", "lang": "en"}
+  },
+  "reviewer": {
+    "example-consulting.example": {"nick": "Jane", "company": "your consulting business", "kind": "generic", "reason": "company is named after the lead"},
+    "northwind-it.example": {"nick": "José", "company": "Northwind", "kind": "brand", "reason": "keep the accent the lead uses"},
+    "emma-solutions.example": {"nick": "Olivia", "company": "your software business", "kind": "generic", "reason": "\"Emma\" reads like a first name in the line"},
+    "tradeloop.example": {"nick": "Anna", "company": "Tradeloop", "kind": "brand", "reason": "second word is not part of the name people use"}
+  }
+}

@@ -1,0 +1,4 @@
+# Real mode (Anthropic API backend, .env loading).
+# The offline demo and the tests need no packages beyond pytest.
+anthropic>=1.0
+python-dotenv>=1.0

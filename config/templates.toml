@@ -1,0 +1,20 @@
+# The icebreaker sentence is fixed. A person writes it once; the model never writes it.
+# Code fills exactly two slots:
+#   {nick}     the casual first name ("Max" for MAXIMILIAN)
+#   {company}  the company as people say it, or a "your <what they do> business" phrase
+#
+# generic_prefixes: a generic company phrase must start with one of these words
+#                   (checked in code, so a wrong possessive never ships)
+# too_vague:        generic phrases that are rejected outright
+#
+# Swiss leads get "ss" instead of "ß" (Swiss German spelling); that rule lives in language.py.
+
+[en]
+template = "Hey {nick}. Been thinking about {company} for a bit, love what you're building and the bigger mission."
+generic_prefixes = ["your"]
+too_vague = ["your business", "your company"]
+
+[de]
+template = "Hey {nick}. Hab {company} schon eine Weile auf dem Schirm, find richtig stark, was ihr aufbaut, und die größere Mission dahinter."
+generic_prefixes = ["dein", "deine", "deinen", "deinem", "deiner"]
+too_vague = ["dein unternehmen", "deine firma", "dein business", "dein geschäft"]

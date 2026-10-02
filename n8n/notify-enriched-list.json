@@ -1,0 +1,67 @@
+{
+  "name": "Lead list enriched -> notify",
+  "nodes": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "name": "New file in folder 2",
+      "type": "n8n-nodes-base.googleDriveTrigger",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "parameters": {
+        "authentication": "oAuth2",
+        "pollTimes": {"item": [{"mode": "everyX", "value": 5, "unit": "minutes"}]},
+        "triggerOn": "specificFolder",
+        "folderToWatch": {"__rl": true, "value": "YOUR_FOLDER_2_ID", "mode": "id"},
+        "event": "fileCreated",
+        "options": {}
+      }
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "name": "Lead list?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [240, 0],
+      "parameters": {
+        "conditions": {
+          "options": {"caseSensitive": true, "leftValue": "", "typeValidation": "loose", "version": 2},
+          "conditions": [
+            {
+              "id": "c1",
+              "leftValue": "={{ $json.mimeType }}",
+              "rightValue": "application/vnd.google-apps.spreadsheet",
+              "operator": {"type": "string", "operation": "equals"}
+            },
+            {
+              "id": "c2",
+              "leftValue": "={{ ($json.name || '').toLowerCase() }}",
+              "rightValue": "enriched",
+              "operator": {"type": "string", "operation": "regex"}
+            }
+          ],
+          "combinator": "or"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000003",
+      "name": "Mail me",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [480, -80],
+      "parameters": {
+        "sendTo": "you@example.com",
+        "subject": "=Lead list enriched: {{ $json.name }}",
+        "emailType": "text",
+        "message": "=event: lead_list_enriched\ntitle: {{ $json.name }}\nfileId: {{ $json.id }}\nurl: {{ $json.webViewLink }}\nfolder: folder 2 (enriched)",
+        "options": {"appendAttribution": false, "senderName": "Lead lists"}
+      }
+    }
+  ],
+  "connections": {
+    "New file in folder 2": {"main": [[{"node": "Lead list?", "type": "main", "index": 0}]]},
+    "Lead list?": {"main": [[{"node": "Mail me", "type": "main", "index": 0}], []]}
+  },
+  "settings": {"executionOrder": "v1"}
+}

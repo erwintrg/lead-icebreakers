@@ -1,0 +1,19 @@
+# secrets and local config
+.env
+# your own overrides are lead data; only the fictional example is tracked
+config/overrides.csv
+
+# output (enriched lists are lead data too)
+out/
+*-icebreakers.csv
+*-reapplied.csv
+*.review.txt
+
+# review notes for the author, not part of the project
+REVIEW.md
+
+# python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
