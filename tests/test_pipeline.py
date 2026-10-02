@@ -79,7 +79,7 @@ def test_second_reader_fixes_are_applied_and_reported(quiet):
 
     rows = make_rows(3)
     res = enrich_rows(rows, FakeBackend(reviewer=reviewer), log=quiet)
-    assert "about your consulting business for a bit" in rows[1]["Icebreaker"]
+    assert "across your consulting business the other week" in rows[1]["Icebreaker"]
     assert [(c.row, c.stage, c.reason) for c in res.changes] == [(3, "review", "named after the lead")]
     assert res.drafts[1].company == "Company1"  # the writer's answer is kept for the report
     assert res.reviewed == 3
@@ -90,7 +90,7 @@ def test_reviewer_fix_that_breaks_the_rules_is_rejected(quiet):
     res = enrich_rows(rows, FakeBackend(reviewer=lambda r: {"company": "your business", "kind": "generic"}),
                       log=quiet)
     assert not res.changes
-    assert rows[0]["Icebreaker"].startswith("Hey Person0. Been thinking about Company0 ")
+    assert rows[0]["Icebreaker"].startswith("Hey Person0. Came across Company0 ")
 
 
 def test_review_failure_means_no_line(quiet):
@@ -118,5 +118,5 @@ def test_country_language_beats_the_model(quiet):
     rows = make_rows(1, country="Austria")
     english = lambda lead: {"nick": lead["first_name"], "company": "Company0", "kind": "brand", "lang": "en"}
     res = enrich_rows(rows, FakeBackend(writer=english), log=quiet)
-    assert rows[0]["Icebreaker"].startswith("Hey Person0. Hab Company0 schon")
+    assert rows[0]["Icebreaker"].startswith("Hey Person0. Bin neulich auf Company0 ")
     assert res.final[0].lang_source == "country"

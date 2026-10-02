@@ -21,7 +21,7 @@ def test_override_beats_writer_and_reviewer(tmp_path, quiet):
     reviewer = lambda r: {"company": "Company1 Labs", "reason": "fuller name"} if r["company"] == "Company1" else None
     rows = make_rows(3)
     res = enrich_rows(rows, FakeBackend(reviewer=reviewer), overrides=table, log=quiet)
-    assert "about CompanyOne for a bit" in rows[1]["Icebreaker"]
+    assert "across CompanyOne the other week" in rows[1]["Icebreaker"]
     assert [(c.stage, c.before, c.after) for c in res.changes] == [
         ("review", "Person1 / Company1", "Person1 / Company1 Labs"),
         ("override", "Person1 / Company1 Labs", "Person1 / CompanyOne"),
@@ -95,5 +95,5 @@ def test_reapply_rewrites_finished_lines_without_a_model(tmp_path, quiet):
     changes = reapply(rows, table, log=quiet)
     assert [c.row for c in changes] == [3, 4]
     assert rows[0]["Icebreaker"] == before  # untouched
-    assert "about CompanyOne for a bit" in rows[1]["Icebreaker"]
-    assert "Hab CompanyTwo schon" in rows[2]["Icebreaker"] and "grössere" in rows[2]["Icebreaker"]
+    assert "across CompanyOne the other week" in rows[1]["Icebreaker"]
+    assert "auf CompanyTwo gestossen" in rows[2]["Icebreaker"] and "gestossen" in rows[2]["Icebreaker"]

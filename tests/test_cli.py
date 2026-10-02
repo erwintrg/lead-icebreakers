@@ -36,10 +36,10 @@ def test_reapply_applies_overrides_to_a_finished_file(tmp_path, capsys):
     enriched, fixed = tmp_path / "enriched.csv", tmp_path / "fixed.csv"
     main([str(SAMPLE), "-o", str(enriched), "--backend", "mock", "--overrides", str(tmp_path / "none.csv")])
     before = read(enriched)
-    assert "Hab Cloudridge schon" in before[10]["Icebreaker"]
+    assert "auf Cloudridge gestossen" in before[10]["Icebreaker"]
     assert main(["reapply", str(enriched), "-o", str(fixed), "--overrides", str(config.OVERRIDES_EXAMPLE)]) == 0
     after = read(fixed)
-    assert "Hab CloudRidge schon" in after[10]["Icebreaker"]
+    assert "auf CloudRidge gestossen" in after[10]["Icebreaker"]
     assert [a["Icebreaker"] for i, a in enumerate(after) if i != 10] == \
         [b["Icebreaker"] for i, b in enumerate(before) if i != 10]
 
@@ -52,4 +52,4 @@ def test_demo_runs_offline(monkeypatch, capsys):
     text = capsys.readouterr().out
     assert "Second reader changed 4 of 12 lines" in text
     assert "never    email, phone, linkedin_url" in text
-    assert "grössere Mission" in text  # Swiss spelling for the Zürich and Bern leads
+    assert "gestossen und" in text  # Swiss spelling for the Zürich and Bern leads

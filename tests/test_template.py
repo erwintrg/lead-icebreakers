@@ -9,19 +9,19 @@ CH = {"country": "Switzerland", "city": "Zürich"}
 
 def test_english_line_is_the_fixed_sentence():
     line = render(Draft("Mike", "Brightpath", "brand", "en"), UK)
-    assert line == ("Hey Mike. Been thinking about Brightpath for a bit, "
-                    "love what you're building and the bigger mission.")
+    assert line == ("Hey Mike. Came across Brightpath the other week "
+                    "and really like what you're building.")
 
 
 def test_german_line_keeps_eszett():
     line = render(Draft("Max", "Hafenblick", "brand", "de"), DE)
-    assert line.startswith("Hey Max. Hab Hafenblick schon eine Weile auf dem Schirm")
-    assert "größere" in line
+    assert line.startswith("Hey Max. Bin neulich auf Hafenblick gestoßen")
+    assert "gestoßen" in line
 
 
 def test_swiss_line_uses_ss():
     line = render(Draft("Ursula", "Grünwerk Studio", "brand", "de"), CH)
-    assert "grössere" in line and "ß" not in line
+    assert "gestossen" in line and "ß" not in line
     assert "Grünwerk" in line  # only ß changes, umlauts stay
 
 

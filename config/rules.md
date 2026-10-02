@@ -27,7 +27,7 @@ Only when the company has a distinctive name that sounds natural in the line.
 
 - it is a description rather than a brand ("Online Marketing", "IT Services & Consulting"), also in another language ("Het Adviesbureau" = "the consultancy" -> "your consulting business"), or the only brand is a descriptive domain (londonbookkeepingservices.example -> "your bookkeeping business");
 - the company is named after the lead themselves (Jane Example at "Example Consulting", Max Mustermann at "Mustermann Advisory" -> "your consulting business");
-- the short name reads like a common word, a phrase, a person's first name, or something negative or strange when you say it to them ("Been thinking about Panic for a bit", "... about The Framework ...", "... about Emma ...");
+- the short name reads like a common word, a phrase, a person's first name, or something negative or strange when you say it to them ("Came across Panic the other week", "... across The Framework ...", "... across Emma ...");
 - no short form works and the full name is long or clunky.
 
 Pick generic for names that could really be misread or sound odd; a clear, distinctive brand stays a brand.

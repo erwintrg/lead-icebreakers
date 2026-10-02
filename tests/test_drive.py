@@ -184,7 +184,7 @@ def test_redo_overrides_only_rewrites_the_column_in_place(tmp_path):
                   overrides_only=True, local_dir=tmp_path, log=lambda *_: None)
     after = g.grids["sheet"]
     assert after[1] == grid[1]  # untouched row
-    assert "about CompanyOne for a bit" in after[2][-1] and after[2][-2] == "keep me"
+    assert "across CompanyOne the other week" in after[2][-1] and after[2][-2] == "keep me"
 
 
 def test_account_guard():

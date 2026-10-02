@@ -24,8 +24,8 @@ Cold email needs a personal first line, and both usual ways to get one go wrong:
 The sentence is written once by a person and lives in `config/templates.toml`:
 
 ```text
-EN  Hey {nick}. Been thinking about {company} for a bit, love what you're building and the bigger mission.
-DE  Hey {nick}. Hab {company} schon eine Weile auf dem Schirm, find richtig stark, was ihr aufbaut, und die größere Mission dahinter.
+EN  Hey {nick}. Came across {company} the other week and really like what you're building.
+DE  Hey {nick}. Bin neulich auf {company} gestoßen und finde richtig gut, was ihr aufbaut.
 ```
 
 The model decides only what needs judgment:
@@ -135,10 +135,10 @@ Human overrides changed 1 line (applied after both model passes)
           the brand writes it CloudRidge
 
 Finished lines
-  row 3   Hey Jane. Been thinking about your consulting business for a bit, love what you're building and the bigger mission.
-  row 4   Hey Max. Hab Hafenblick schon eine Weile auf dem Schirm, find richtig stark, was ihr aufbaut, und die größere Mission dahinter.
-  row 8   Hey Ursula. Hab Grünwerk Studio schon eine Weile auf dem Schirm, find richtig stark, was ihr aufbaut, und die grössere Mission dahinter.
-  row 13  Hey Anna. Been thinking about Tradeloop for a bit, love what you're building and the bigger mission.
+  row 3   Hey Jane. Came across your consulting business the other week and really like what you're building.
+  row 4   Hey Max. Bin neulich auf Hafenblick gestoßen und finde richtig gut, was ihr aufbaut.
+  row 8   Hey Ursula. Bin neulich auf Grünwerk Studio gestossen und finde richtig gut, was ihr aufbaut.
+  row 13  Hey Anna. Came across Tradeloop the other week and really like what you're building.
 
 What the model saw
   columns  first_name, last_name, title, company_name, company_domain, industry, city, country (+ lang_hint)
@@ -244,7 +244,7 @@ name in the line, or that Jane Example's "Example Consulting" is named after her
 ### A second reader instead of a longer prompt
 
 The writer sees raw lead data. The second reader sees the finished sentence, which is where an
-odd name shows ("Been thinking about Emma for a bit"). A reviewer fix that breaks a rule is
+odd name shows ("Came across Emma the other week"). A reviewer fix that breaks a rule is
 rejected and the writer's version kept. If a reviewer call fails twice, its rows ship blank: no
 line goes out without a second read.
 

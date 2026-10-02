@@ -10,11 +10,11 @@
 # Swiss leads get "ss" instead of "ß" (Swiss German spelling); that rule lives in language.py.
 
 [en]
-template = "Hey {nick}. Been thinking about {company} for a bit, love what you're building and the bigger mission."
+template = "Hey {nick}. Came across {company} the other week and really like what you're building."
 generic_prefixes = ["your"]
 too_vague = ["your business", "your company"]
 
 [de]
-template = "Hey {nick}. Hab {company} schon eine Weile auf dem Schirm, find richtig stark, was ihr aufbaut, und die größere Mission dahinter."
+template = "Hey {nick}. Bin neulich auf {company} gestoßen und finde richtig gut, was ihr aufbaut."
 generic_prefixes = ["dein", "deine", "deinen", "deinem", "deiner"]
 too_vague = ["dein unternehmen", "deine firma", "dein business", "dein geschäft"]
